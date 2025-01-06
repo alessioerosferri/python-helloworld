@@ -11,6 +11,13 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--version', action='version',
         version='helloworld ' + helloworld.__version__)
 
+class Helloworld:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def hello():
+        print("Hello, world")
 
 def main(argv=None):
     if argv is None:
@@ -21,6 +28,6 @@ def main(argv=None):
     # ensures the user hasn't passed any other unrecognized arguments.
     parser.parse_args(argv[1:])
 
-    print("Hello, world")
+    Helloworld.hello()
 
     return 0
